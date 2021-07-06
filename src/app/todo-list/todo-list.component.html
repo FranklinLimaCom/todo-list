@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="todolist not-done">
+                <h1>Todo List</h1>
+                <form class="form-inline">
+                    <input type="text" class="form-control add-todo" [(ngModel)]="itemToAdd" name="item"
+                        placeholder="Add Item...">
+                    <button (click)="addToList()" id="checkAll" class="btn btn-success ml-2">Add</button>
+
+                </form>
+                <hr>
+                <ul id="sortable" class="list-unstyled">
+                    <li class="ui-state-default" *ngFor="let item of todoList; let i = index">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" (click)="doItem(i)" value="" />{{item}}</label>
+                        </div>
+                    </li>
+                </ul>
+                <h2>Items Done</h2>
+
+                <ul id="sortable" class="list-unstyled">
+                    <li class="ui-state-default" *ngFor="let item of doneList; let i = index">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" (click)="undoItem(i)" checked /> <span
+                                    style="text-decoration: line-through;">{{item}}</span> </label>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
