@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+interface Item {
+  title: String
+  description: String
+}
+
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
@@ -7,9 +12,10 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class TodoListComponent implements OnInit {
-  todoList: string[] = [];
-  doneList: string[] = []
-  itemToAdd: string = ''
+
+  todoList: Array<any> = [];
+  doneList: Array<any> = []
+  itemToAdd: Item = { title: '', description: '' }
 
   addToList() {
     let filter = this.todoList.filter(task => task == this.itemToAdd)
