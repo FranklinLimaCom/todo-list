@@ -18,10 +18,10 @@ export class TodoListComponent implements OnInit {
   itemToAdd: Item = { title: '', description: '' }
 
   addToList() {
-    let filter = this.todoList.filter(task => task == this.itemToAdd)
+    let filter = this.todoList.filter(task => task.title == this.itemToAdd.title)
     console.log(filter)
     if (filter.length == 0) {
-      this.todoList.push(this.itemToAdd);
+      this.todoList.push(JSON.parse(JSON.stringify(this.itemToAdd)));
     } else {
       alert('This task is already in the list')
     }
@@ -34,6 +34,14 @@ export class TodoListComponent implements OnInit {
 
   undoItem(index: number) {
     this.todoList.push(this.doneList[index])
+    this.doneList.splice(index, 1)
+  }
+
+  removeFromTodo(index: number) {
+    this.todoList.splice(index, 1)
+  }
+
+  removeFromDone(index: number) {
     this.doneList.splice(index, 1)
   }
 

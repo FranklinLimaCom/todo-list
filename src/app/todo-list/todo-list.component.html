@@ -19,25 +19,28 @@
 
             <h2>Todo List</h2>
             <hr>
-            <div *ngFor="let item of todoList; let i = index">
-
-
-
-
-
+            <div class="card" style="width: 18rem;" *ngFor="let item of todoList; let i = index">
+                <div class="card-body">
+                    <h5 class="card-title">{{item.title}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Task {{i + 1}}</h6>
+                    <p class="card-text">{{item.description}}</p>
+                    <a href="#" class="card-link primary" (click)="doItem(i)">Move to Done</a>
+                    <a href="#" (click)="removeFromTodo(i)" class="card-link text-danger">Remove</a>
+                </div>
             </div>
-            <div class="col-md-6 mt-5">
-                <h2>Items Done</h2>
-                <hr>
-                <ul id="sortable" class="list-unstyled">
-                    <li class="ui-state-default" *ngFor="let item of doneList; let i = index">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" (click)="undoItem(i)" checked /> <span
-                                    style="text-decoration: line-through;">{{item}}</span> </label>
-                        </div>
-                    </li>
-                </ul>
+
+        </div>
+        <div class="col-md-6 mt-5">
+            <h2>Items Done</h2>
+            <hr>
+            <div class="card" style="width: 18rem;" *ngFor="let item of doneList; let i = index">
+                <div class="card-body">
+                    <h5 class="card-title">{{item.title}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Task {{i + 1}}</h6>
+                    <p class="card-text">{{item.description}}</p>
+                    <a href="#" class="card-link primary" (click)="undoItem(i)">Back to Todo</a>
+                    <a href="#" (click)="removeFromDone(i)" class="card-link text-danger">Remove</a>
+                </div>
             </div>
         </div>
     </div>

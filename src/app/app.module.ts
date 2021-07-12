@@ -5,14 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { FormsModule } from '@angular/forms';
-import { TodoCardComponent } from './todo-card/todo-card.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoListComponent,
-    TodoCardComponent,
+
   ],
   imports: [
     BrowserModule,
