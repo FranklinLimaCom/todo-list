@@ -22,7 +22,6 @@
       <div class="card" style="width: 18rem;" *ngFor="let item of todoList; let i = index">
         <div class="card-body">
           <h5 class="card-title"><a [routerLink]="['/task', item]">{{item.title}}</a></h5>
-          <h6 class="card-subtitle mb-2 text-muted">Task {{i + 1}}</h6>
           <p class="card-text">{{item.description}}</p>
           <a href="#" class="card-link primary" (click)="doItem(i)">Move to Done</a>
           <a href="#" (click)="removeFromTodo(i)" class="card-link text-danger">Remove</a>
@@ -36,7 +35,6 @@
       <div class="card" style="width: 18rem;" *ngFor="let item of doneList; let i = index">
         <div class="card-body">
           <h5 class="card-title"><a [routerLink]="['/task', item]">{{item.title}}</a></h5>
-          <h6 class="card-subtitle mb-2 text-muted">Task {{i + 1}}</h6>
           <p class="card-text">{{item.description}}</p>
           <a href="#" class="card-link primary" (click)="undoItem(i)">Back to Todo</a>
           <a href="#" (click)="removeFromDone(i)" class="card-link text-danger">Remove</a>

@@ -22,6 +22,7 @@ export class TodoListComponent implements OnInit {
     console.log(filter)
     if (filter.length == 0) {
       this.todoList.push(JSON.parse(JSON.stringify(this.itemToAdd)));
+      this.itemToAdd = { title: '', description: '' }
     } else {
       alert('This task is already in the list')
     }
